@@ -11,11 +11,7 @@ app.use(cors({
   origin: ['http://localhost:3000', 'https://taskflicker.vercel.app']
 }));
 
-app.get('/', (req: Request, res: Response) => {
-    res.json({ "message": 'Hello World!'})
-})
-
-app.use('/task', taskRoutes)
+app.use('/', taskRoutes)
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`)

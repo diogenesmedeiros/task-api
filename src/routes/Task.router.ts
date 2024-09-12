@@ -1,12 +1,14 @@
 import express from 'express';
-import { getAllTasks, getByIdTasks, createTask, modifyTask, removeTask } from '../controllers/Task.controller'
+import { getAllTasks, getByIdTasks, createTask, modifyTask, removeTask, createGroupTasks, findGroupTasks } from '../controllers/Task.controller'
 
-const router = express.Router()
+const router = express.Router();
 
-router.get('/', getAllTasks)
-router.get('/:id', getByIdTasks)
-router.post('/', createTask)
-router.put('/:id', modifyTask)
-router.delete('/:id', removeTask)
+router.get('/', createGroupTasks);
+router.post('/', findGroupTasks);
+router.get('/:idGroup/tasks', getAllTasks);
+router.get('/:idGroup/tasks/:id', getByIdTasks);
+router.post('/:idGroup/tasks', createTask);
+router.put('/:idGroup/tasks/:id', modifyTask);
+router.delete('/:idGroup/tasks/:id', removeTask);
 
-export default router
+export default router;
