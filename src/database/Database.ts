@@ -1,5 +1,4 @@
 import { Sequelize } from "sequelize";
-import mysql2 from "mysql2";
 import postgres from "pg";
 import dotenv from "dotenv";
 
@@ -35,9 +34,6 @@ export class Database {
         }
 
         switch (db_driver) {
-            case "mysql":
-                dialect_module = mysql2
-                break
             case "postgres":
                 dialect_module = postgres
                 break
