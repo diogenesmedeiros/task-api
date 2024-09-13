@@ -53,6 +53,8 @@ export class Database {
             },
             logging: (msg) => console.log(msg),
         })
+
+        this.authenticate(this.retryAttempts)
     }
 
     private static async authenticate(attempt: number = 0): Promise<void> {
