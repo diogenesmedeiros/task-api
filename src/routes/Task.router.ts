@@ -3,8 +3,8 @@ import { getAllTasks, getByIdTasks, createTask, modifyTask, removeTask, createGr
 
 const router = express.Router();
 
-router.get('/', createGroupTasks);
-router.post('/', findGroupTasks);
+router.post('/', createGroupTasks);
+router.post('/join-room', findGroupTasks);
 router.get('/:idGroup/tasks', getAllTasks);
 router.get('/:idGroup/tasks/:id', getByIdTasks);
 router.post('/:idGroup/tasks', createTask);
